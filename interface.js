@@ -2,15 +2,6 @@
 abi=[
 	{
 		"constant": false,
-		"inputs": [],
-		"name": "divestETH",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
 		"inputs": [
 			{
 				"name": "referral",
@@ -184,7 +175,7 @@ abi=[
 	}
 ]
 
-contractAddress="0xd089e34694eb023d25aadd3dc8c18337534a10c0";
+contractAddress="0x5978Ab0E3D56e6C88E3f7003aB8d0C0044FCC25B";
 
 function investETH(callback){
 	eth = document.getElementById("investAmount").value * 1000000000000000000;
@@ -203,21 +194,6 @@ function investETH(callback){
     });
 }
 
-function divestETH(callback){
-    var contractAbi = web3.eth.contract(abi);
-    var myContract = contractAbi.at(contractAddress);
-    var outputData = myContract.divestETH.getData();
-    var endstr=web3.eth.sendTransaction({to:contractAddress, from:null, data: outputData},
-    function(error,result){
-        if(!error){
-            console.log('divestETH ',eth);
-            callback()
-        }
-        else{
-            console.log('error :(')
-        }
-    });
-}
 
 function reinvestProfit(callback){
     var contractAbi = web3.eth.contract(abi);
