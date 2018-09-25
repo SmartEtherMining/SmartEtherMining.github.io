@@ -46,9 +46,7 @@
   </head>
 
   <body bgcolor="#1B1B1E">
-
     <ul class="cool" style="margin-top: -20px;">
-      <li class="cool"><a class="cool" href="#home">SmartEtherMining.io</a></li>
       <li class="cool"><a target="_blank" class="cool" href="https://rinkeby.etherscan.io/address/0x5978Ab0E3D56e6C88E3f7003aB8d0C0044FCC25B">Etherscan</a></li>
     </ul>
 
@@ -76,9 +74,8 @@
           justify-content: space-between;
       }
       </style>
-
       <center>
-        <p><img src="logo.png" height="342" width="589"></p>
+      <p><img src="logo.png" height="342" width="589"></p>
         <p><strong>RINKEBY TEST NETWORK</strong></p>
       </center>
 
@@ -129,25 +126,27 @@ input:focus, button:focus{
           <p>Invest your ETH here. You will earn 20% a day off your investment. Your profit can be withdrawn anytime. Your profit accrues every second, and can be withdrawn any time from your profit wallet.</p>
         </div>
         <input id="investAmount" placeholder="0.00000000 ETH"><br><br>
-        <p>Minimum: 0.01 ETH</p>
         <button onclick="investETH(sent)">INVEST</button>
-      </div>
+        <p>Minimum: 0.01 ETH</p>
+        </div>
     </center>
 
       <center>
         <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
           <div class="panel">
             <h1>Active investment</h1>
+            <p>&nbsp;</p>
             <h1 id="activeInvestment" style="color: #00DD00; font-size: 80px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">0.00000000 ETH</h1>
 
           </div>
 
           <div class="panel">
-            <h1>Profit Wallet</h1>
-            <p>This is interest profit that you earned. You earn interest every second. (Updated every few seconds). There is no fee for withdrawing your interest.</p>
+            <h1>Profit Wallet            </h1>
             <h1 id="activeProfit" style="color: #00DD00; font-size: 80px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">0.00000000 ETH</h1>
             <button onclick="withdrawProfit(sent)">WITHDRAW</button>
             <button onclick="reinvestProfit(sent)">REINVEST</button>
+            <p>&nbsp;</p>
+            <p>This is interest profit that you earned. You earn interest every second. (Updated every few seconds). There is no fee for withdrawing your interest.</p>
           </div>
         </div>
       </center>
@@ -155,11 +154,12 @@ input:focus, button:focus{
       <center>
         <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
         <div class="panel">
-        <h1>Affiliate Commision</h1>
-        <p>Any affiliate commision will show up here, instantly available to withdraw.</p>
+        <h1>Affiliate Commision        </h1>
         <h1 id="activeCommision" style="color: #00DD00; font-size: 80px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">0.00000000 ETH</h1>
         <button onclick="withdrawAffiliateCommision(sent)">WITHDRAW</button>
-      </div>
+        <p>&nbsp;</p>
+        <p>Any affiliate commision will show up here, instantly available to withdraw.</p>
+        </div>
 
       <div class="panel">
         <h1>Your referral link</h1>
