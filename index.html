@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="logo.png">
+    <link rel="icon" href="miner.png">
 
     <title>SmartEtherMining.io</title>
+
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,15 +20,6 @@
     <!-- Custom styles for this template -->
     <link href="jumbotron-narrow.css" rel="stylesheet">
     <link href="custom.css" rel="stylesheet">
-    <style type="text/css">
-    body {
-	background-color: #AAAAAA;
-	background-image: url();
-}
-    body,td,th {
-	color: #E2E2E2;
-}
-    </style>
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
@@ -45,9 +37,11 @@
     <![endif]-->
   </head>
 
-  <body bgcolor="#1B1B1E">
+  <body>
+
     <ul class="cool" style="margin-top: -20px;">
-      <li class="cool"><a target="_blank" class="cool" href="https://rinkeby.etherscan.io/address/0x5978Ab0E3D56e6C88E3f7003aB8d0C0044FCC25B">Etherscan</a></li>
+      <li class="cool"><a class="cool" href="#home">SmartEtherMining.io</a></li>
+      <li class="cool"><a target="_blank" class="cool" href="https://etherscan.io/address/0xd089e34694eb023d25aadd3dc8c18337534a10c0">Etherscan</a></li>
     </ul>
 
       <style>body{
@@ -59,7 +53,7 @@
         font-weight: lighter;
       }
         .panel{
-          background-color: #0A2463;
+          background-color: white;
           box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
           width: 90%;
           padding: 5px;
@@ -74,10 +68,8 @@
           justify-content: space-between;
       }
       </style>
-      <center>
-      <p><img src="logo.png" height="342" width="589"></p>
-        <p><strong>RINKEBY TEST NETWORK</strong></p>
-      </center>
+
+      <center><img src="miner.png" height="200px" width="180px"></center>
 
       <style>ul.cool {
     list-style-type: none;
@@ -114,62 +106,65 @@ input:focus, button:focus{
 
 </style>
 
-     <center><div class="pane">
-       <div style="text-align: left;">        </div>
+     <center><div class="panel">
+        <h1 style="text-align: left;">Earn Ethereum With SmartEtherMining.io</h1>
+        <p>Introducing... a brand new way to earn Ethereum! This smart contract game allows you to earn 2% of whatever you invest every single day. Your profit is accrued every second, and can be withdrawn anytime. You also have full control over your capital. It's a HYIP on a smart contract, and fully transparent. You never need to worry about a exit scam or someone taking all the money and leaving.</p>
+        <div style="text-align: left;">
+          <h1>You oughta know...</h1>
+          <ul>
+          <li>This is a game, not a investment.</li>
+          <li>Your profit is funded by new investors.</li>
+          <li>Although this game will let more users profit than Idle games like Shrimp Idle Farm, don't put in anything you are uncomfortable losing.</li>
+        </ul>
+        </div>
       </div>
     </center>
 
       <center>
         <div class="panel">
-        <h1>Invest ETH</h1>
+        <h1>Invest your ETH</h1>
         <div style="width: 80%;">
-          <p>Invest your ETH here. You will earn 20% a day off your investment. Your profit can be withdrawn anytime. Your profit accrues every second, and can be withdrawn any time from your profit wallet.</p>
+          <p>Invest your ETH here. You will earn 2% a day off your investment. Your capital and profit can be withdrawn anytime. Your profit is accrued every by the second in your profit wallet.</p>
         </div>
         <input id="investAmount" placeholder="0.00000000 ETH"><br><br>
-        <button onclick="investETH(sent)">INVEST</button>
         <p>Minimum: 0.01 ETH</p>
-        </div>
+        <button onclick="investETH(sent)">INVEST</button>
+      </div>
     </center>
 
       <center>
         <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
-          <div class="panel">
-            <h1>Active investment</h1>
-            <p>&nbsp;</p>
-            <h1 id="activeInvestment" style="color: #00DD00; font-size: 80px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">0.00000000 ETH</h1>
-
+          <div class="panel half">
+            <h1>Your active investment</h1>
+            <p>You may withdraw your investment anytime. Please know this will withdraw your entire investment, and you will stop earning interest payments. There is a 20% withdraw fee.</p>
+            <h1 id="activeInvestment" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+            <button onclick="divestETH(sent)">DIVEST</button>
           </div>
 
-          <div class="panel">
-            <h1>Profit Wallet            </h1>
-            <p>&nbsp;</p>
-            <h1 id="activeProfit" style="color: #00DD00; font-size: 80px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">0.00000000 ETH</h1>
+          <div class="panel half">
+            <h1>Profit Wallet</h1>
+            <p>This is interest profit that you earned. You earn interest every second. (Updated every few seconds). There is no fee for withdrawing your interest.</p>
+            <h1 id="activeProfit" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
             <button onclick="withdrawProfit(sent)">WITHDRAW</button>
             <button onclick="reinvestProfit(sent)">REINVEST</button>
-            <p>&nbsp;</p>
-            <p>This is interest profit that you earned. You earn interest every second. (Updated every few seconds). There is no fee for withdrawing your interest.</p>
           </div>
         </div>
       </center>
 
       <center>
         <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
-        <div class="panel">
-        <h1>Affiliate Commision        </h1>
-        <h1 id="activeCommision" style="color: #00DD00; font-size: 80px; text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">0.00000000 ETH</h1>
-        <button onclick="withdrawAffiliateCommision(sent)">WITHDRAW</button>
-        <p>&nbsp;</p>
+        <div class="panel half">
+        <h1>Affiliate Commision</h1>
         <p>Any affiliate commision will show up here, instantly available to withdraw.</p>
-        </div>
+        <h1 id="activeCommision" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+        <button onclick="withdrawAffiliateCommision(sent)">WITHDRAW</button>
+      </div>
 
-      <div class="panel">
+      <div class="panel half">
         <h1>Your referral link</h1>
-        <p>&nbsp;</p>
-        <h1 id="reflink" style="color: orangered; font-size: 20px; word-break: break-all;">https://SmartEtherMining.io/?ref=address=[Please Wait]        </h1>
-        <p style="color: orangered; font-size: 20px; word-break: break-all;">&nbsp;</p>
+        <p>Shill your affiliate link. You will earn 5% commision of every investment made with your link.</p>
+        <h1 id="reflink" style="color: orangered; font-size: 20px; word-break: break-all;">https://SmartEtherMining.io/?ref=address=[Please Wait]</h1>
         <button onclick="copyToClipboard()">COPY LINK</button>
-        <p>&nbsp;</p>
-        <p>Shill your affiliate link. You will earn 10% commision of every investment made with your link!</p>
       </div>
     </div>
       </center>
